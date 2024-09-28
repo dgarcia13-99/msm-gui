@@ -13,10 +13,10 @@
 </div>
 
 <hr>
-<form action="/insert_movie" method="post">
+<form action="/update_movie/<%= @the_movie.id %>" method="post">
 <div>
 <label for="title_box">Title </label>
-<input type="text" id="title_box" name="movie_title" value="<%= @the_movie.title%>">
+<input type="text" id="title_box" name="movie_title" value="<%= @the_movie.title %>">
 </div>
 
 <div>

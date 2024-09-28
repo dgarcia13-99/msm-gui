@@ -16,12 +16,8 @@ class MoviesController < ApplicationController
     @movie.image = params.fetch("movie_image")
     @movie.director_id = params.fetch("movie_director_id")
 
-    if @movie.valid?
-      @movie.save
-      redirect_to("/movies/#{@movie.id}", { :notice => "Movie updated successfully."} )
-    else
-      redirect_to("/movies/#{@movie.id}", { :alert => "Movie failed to update successfully." })
-    end
+    @movie.save
+    redirect_to("/movies")
 
   end
   def create_movie
