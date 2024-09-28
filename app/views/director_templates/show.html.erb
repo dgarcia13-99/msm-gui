@@ -19,25 +19,25 @@
 <div>
 <label for="name_box">Name</label></div>
 <div>
-<input type="text" id="name_box" name="director_name" >
+<input type="text" id="name_box" name="director_name" value="<%=@the_director.name%>">
 </div>
 
 <div>
 <label for="dob_box">Dob</label></div>
 <div>
-<input type="date" id="name_box" name="director_dob" >
+<input type="date" id="name_box" name="director_dob" value="<%=@the_director.dob%>">
 </div>
 
 <div>
 <label for="bio_box">Bio</label></div>
 <div>
-<textarea id="bio_box" name="director_bio" rows="3" ></textarea>
+<textarea id="bio_box" name="director_bio" rows="3"><%=@the_director.bio%></textarea>
 </div>
 
 <div>
 <label for="image_box">Image</label></div>
 <div>
-<input type="text" id="image_box" name="director_image" >
+<input type="text" id="image_box" name="director_image" value="<%=@the_director.image%>">
 </div>
 
 <button>Update director</button>
