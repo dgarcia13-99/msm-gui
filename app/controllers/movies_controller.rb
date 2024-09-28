@@ -1,4 +1,29 @@
 class MoviesController < ApplicationController
+
+  def delete_movie
+    @movie=Movie.where({ :id => params.fetch("path_id") }).first
+    @movie.destroy
+    redirect_to("/movies")
+  end
+
+  def update_movie
+    the_id = params.fetch("path_id")
+    @movie = Director.where({ :id => the_id }).first
+    @movie.title = params.fetch("movie_title")
+    @movie.year = params.fetch("movie_year")
+    @movie.duration = params.fetch("movie_duration")
+    @movie.description = params.fetch("movie_description")
+    @movie.image = params.fetch("movie_image")
+    @movie.director_id = params.fetch("movie_director_id")
+
+    if @movie.valid?
+      @movie.save
+      redirect_to("/movies/#{@movie.id}", { :notice => "Movie updated successfully."} )
+    else
+      redirect_to("/movies/#{@movie.id}", { :alert => "Movie failed to update successfully." })
+    end
+
+  end
   def create_movie
     @movie=Movie.new
     @movie.title=params.fetch("movie_title")
