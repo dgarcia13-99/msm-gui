@@ -6,6 +6,15 @@ class DirectorsController < ApplicationController
     render({ :template => "director_templates/index" })
   end
 
+  def create_director
+    @director = Director.new
+    @director_name=params.fetch("director_name")
+    @director_dob=params.fetch("director_dob")
+    @director_bio=params.fetch("director_bio")
+    @director_bio=params.fetch("director_url")
+  end
+
+
   def show
     the_id = params.fetch("path_id")
 
