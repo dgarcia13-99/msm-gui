@@ -21,7 +21,7 @@ class ActorsController < ApplicationController
       redirect_to("/actors/#{@actor.id}", { :alert => "Course failed to update successfully." })
     end
 
-  end
+    end
 
   def create_actor
     actor=Actor.new
